@@ -35,5 +35,10 @@ enum AppImage: String, AppImageProtocol {
     // MARK: - Main
     
     case background
+    case nomadLogo
+    case playButton
+    case vibratorButton
+    case settingsButton
+    case infoButton
     
 }
