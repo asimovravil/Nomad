@@ -58,9 +58,9 @@ final class LevelsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var earnedSubTitle: UILabel = {
+    public lazy var earnedSubTitle: UILabel = {
         let label = UILabel()
-        label.text = "0"
+        label.text = "90"
         label.textColor = AppColor.settingsColor.uiColor
         label.font = UIFont(name: "SFProDisplay-Regular", size: 14)
         label.numberOfLines = 0
@@ -79,6 +79,12 @@ final class LevelsTableViewCell: UITableViewCell {
     var namelevel: String? {
         didSet {
             levelName.text = namelevel
+        }
+    }
+    
+    var maxCorrectAnswers: Int = 0 {
+        didSet {
+            guessedSubtitle.text = "\(maxCorrectAnswers)/6"
         }
     }
     

@@ -112,7 +112,6 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LevelsTableViewCell.reuseID, for: indexPath) as? LevelsTableViewCell else {
             fatalError("Could not cast to LevelsTableViewCell")
         }
-        
         if indexPath.item == 0 {
             cell.playButtonTappedHandler = { [weak self] in
                 let controller = DiamondExplosionViewController()
@@ -136,9 +135,11 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         case 3:
             cell.namelevel = "Mysterious Egypt"
             cell.playButton.setImage(AppImage.coin400.uiImage, for: .normal)
+            cell.earnedSubTitle.text = "180"
         case 4:
             cell.namelevel = "Diamond Explosion"
             cell.playButton.setImage(AppImage.coin500.uiImage, for: .normal)
+            cell.earnedSubTitle.text = "180"
         default:
             cell.namelevel = nil
         }
