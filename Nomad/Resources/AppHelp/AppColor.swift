@@ -27,6 +27,8 @@ extension AppColorProtocol {
 }
 
 enum AppColor: String, AppColorProtocol {
+    case red
     case white
+    case green
     case settingsColor
 }
