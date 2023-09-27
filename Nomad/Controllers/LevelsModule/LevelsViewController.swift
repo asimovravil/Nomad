@@ -32,6 +32,23 @@ final class LevelsViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var coinImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.coinMini.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var coinSubtitle: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = AppColor.white.uiColor
+        label.font = UIFont(name: "SFProDisplay-Bold", size: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -45,7 +62,7 @@ final class LevelsViewController: UIViewController {
     // MARK: - setupViews
         
     private func setupViews() {
-        [backgroundView, tableView].forEach {
+        [backgroundView, tableView, coinImageView, coinSubtitle].forEach {
             view.addSubview($0)
         }
     }
@@ -61,6 +78,14 @@ final class LevelsViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.bottom.equalToSuperview().offset(-24)
+        }
+        coinImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(70)
+            make.trailing.equalToSuperview().offset(-62)
+        }
+        coinSubtitle.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(68)
+            make.leading.equalTo(coinImageView.snp.trailing).offset(8)
         }
     }
     
@@ -86,6 +111,28 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LevelsTableViewCell.reuseID, for: indexPath) as? LevelsTableViewCell else {
             fatalError("Could not cast to LevelsTableViewCell")
+        }
+        if indexPath.row == 3 {
+            cell.playButton.setImage(AppImage.coin400.uiImage, for: .normal)
+        } else if indexPath.row == 4 {
+            cell.playButton.setImage(AppImage.coin500.uiImage, for: .normal)
+        } else {
+            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
+        }
+        
+        switch indexPath.row {
+        case 0:
+            cell.namelevel = "Diamond Explosion"
+        case 1:
+            cell.namelevel = "Fruits"
+        case 2:
+            cell.namelevel = "Gold Rush"
+        case 3:
+            cell.namelevel = "Mysterious Egypt"
+        case 4:
+            cell.namelevel = "Diamond Explosion"
+        default:
+            cell.namelevel = nil
         }
         cell.backgroundColor = .clear
         cell.selectionStyle = .none

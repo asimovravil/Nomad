@@ -14,9 +14,8 @@ final class LevelsTableViewCell: UITableViewCell {
     
     // MARK: - UI
     
-    private lazy var levelName: UILabel = {
+    public lazy var levelName: UILabel = {
         let label = UILabel()
-        label.text = "Diamond Explosion"
         label.textColor = AppColor.white.uiColor
         label.font = UIFont(name: "SFProDisplay-Medium", size: 24)
         label.numberOfLines = 0
@@ -34,7 +33,7 @@ final class LevelsTableViewCell: UITableViewCell {
     
     private lazy var guessedSubtitle: UILabel = {
         let label = UILabel()
-        label.text = "6/6"
+        label.text = "0/6"
         label.textColor = AppColor.settingsColor.uiColor
         label.font = UIFont(name: "SFProDisplay-Regular", size: 14)
         label.numberOfLines = 0
@@ -67,11 +66,19 @@ final class LevelsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var playButton: UIButton = {
+    public lazy var playButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.startLevel.uiImage, for: .normal)
         return button
     }()
+    
+    // MARK: - Property
+    
+    var namelevel: String? {
+        didSet {
+            levelName.text = namelevel
+        }
+    }
     
     // MARK: - Lifecycle
     
