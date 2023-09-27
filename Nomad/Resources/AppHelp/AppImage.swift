@@ -45,6 +45,13 @@ enum AppImage: String, AppImageProtocol {
     case settingsButton
     case infoButton
     
+    // MARK: - Levels
+    
+    case coinMini
+    case startLevel
+    case coin400
+    case coin500
+    
     // MARK: - Info
     
     case infoImage

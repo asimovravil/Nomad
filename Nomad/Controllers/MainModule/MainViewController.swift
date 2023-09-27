@@ -31,6 +31,7 @@ final class MainViewController: UIViewController {
     private lazy var playButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.playButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -108,6 +109,11 @@ final class MainViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @objc private func playButtonTapped() {
+        let controller = LevelsViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     @objc private func infoButtonTapped() {
         let controller = InfoViewController()
