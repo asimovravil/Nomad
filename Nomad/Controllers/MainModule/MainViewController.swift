@@ -31,28 +31,25 @@ final class MainViewController: UIViewController {
     private lazy var playButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.playButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private lazy var vibratorButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.vibratorButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private lazy var infoButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.infoButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private lazy var settingsButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.settingsButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -111,7 +108,9 @@ final class MainViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc private func playButtonTapped() {
+    @objc private func infoButtonTapped() {
+        let controller = InfoViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

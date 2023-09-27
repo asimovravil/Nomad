@@ -41,4 +41,7 @@ enum AppImage: String, AppImageProtocol {
     case settingsButton
     case infoButton
     
+    // MARK: - Info
+    
+    case infoImage
 }

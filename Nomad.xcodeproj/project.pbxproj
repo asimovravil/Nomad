@@ -25,6 +25,7 @@
 		F1C7EA612AC3D27400E20AAC /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA582AC3D27400E20AAC /* SFProDisplay-Black.ttf */; };
 		F1C7EA622AC3D27400E20AAC /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA592AC3D27400E20AAC /* SFProDisplay-Medium.ttf */; };
 		F1C7EA662AC3D3B900E20AAC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1C7EA652AC3D3B900E20AAC /* SnapKit */; };
+		F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F1C7EA572AC3D27400E20AAC /* SFProDisplay-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Ultralight.ttf"; sourceTree = "<group>"; };
 		F1C7EA582AC3D27400E20AAC /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
 		F1C7EA592AC3D27400E20AAC /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C7EA632AC3D35500E20AAC /* MainModule */,
+				F1C7EA672AC3D89900E20AAC /* InfoModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +175,14 @@
 				F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		F1C7EA672AC3D89900E20AAC /* InfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */,
+			);
+			path = InfoModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,
 				F1C7EA4D2AC3CD5200E20AAC /* AppImage.swift in Sources */,
 				F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */,
+				F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */,
 				F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
