@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1A742002AC3E0D9003F9607 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F1A741FF2AC3E0D9003F9607 /* SkyFloatingLabelTextField */; };
+		F1A742032AC3E519003F9607 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742022AC3E519003F9607 /* LevelsViewController.swift */; };
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
 		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1A742022AC3E519003F9607 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1A742012AC3E4BA003F9607 /* LevelsModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1A742022AC3E519003F9607 /* LevelsViewController.swift */,
+			);
+			path = LevelsModule;
+			sourceTree = "<group>";
+		};
 		F1C7EA232AC3CBD500E20AAC = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 				F1C7EA632AC3D35500E20AAC /* MainModule */,
 				F1C7EA672AC3D89900E20AAC /* InfoModule */,
 				F1C7EA6A2AC3DB4D00E20AAC /* SettingsModule */,
+				F1A742012AC3E4BA003F9607 /* LevelsModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 				F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */,
 				F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */,
 				F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */,
+				F1A742032AC3E519003F9607 /* LevelsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
