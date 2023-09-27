@@ -63,6 +63,15 @@ enum AppImage: String, AppImageProtocol {
     case coin400
     case coin500
     
+    // MARK: - LevelsAnswers
+    
+    case diamondAnswer
+    case topazAnswer
+    case quartzAnswer
+    case emeraldAnswer
+    case rubyAnswer
+    case sapphireAnswer
+    
     // MARK: - Info
     
     case infoImage

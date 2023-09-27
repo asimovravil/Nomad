@@ -10,6 +10,14 @@ import SnapKit
 
 final class DiamondExplosionViewController: UIViewController {
     
+    private let correctAnswer1 = "Diamond"
+    private let correctAnswer2 = "Topaz"
+    private let correctAnswer3 = "Quartz"
+    private let correctAnswer4 = "Emerald"
+    private let correctAnswer5 = "Ruby"
+    private let correctAnswer6 = "Sapphire"
+    private var isForwardButtonTapped = false
+    
     // MARK: - UI
     
     private lazy var backgroundView: UIImageView = {
@@ -47,8 +55,6 @@ final class DiamondExplosionViewController: UIViewController {
     
     private lazy var variantTextField: UITextField = {
         let textField = UITextField()
-        let rightArrowImageView = UIImageView(image: AppImage.arrowRight.uiImage)
-        let rightArrowView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 0))
         textField.placeholder = "Type Your Variant..."
         textField.font = UIFont(name: "SFProDisplay-Medium", size: 16)
         textField.borderStyle = .none
@@ -58,11 +64,15 @@ final class DiamondExplosionViewController: UIViewController {
         textField.layer.cornerRadius = 26
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
         textField.leftViewMode = .always
-        rightArrowView.addSubview(rightArrowImageView)
-        rightArrowImageView.center = rightArrowView.center
-        textField.rightView = rightArrowView
-        textField.rightViewMode = .always
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return textField
+    }()
+    
+    private lazy var arrowRightButton: UIButton = {
+        let button = UIButton()
+        button.setImage(AppImage.arrowRight.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(arrowRightButtonTapped), for: .touchUpInside)
+        return button
     }()
 
     private lazy var answerOneImage: UIImageView = {
@@ -134,7 +144,7 @@ final class DiamondExplosionViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, heartImage, burgerMenuButton, questionLabel, variantTextField, answerOneImage, answerTwoImage, answerThreeImage, answerFourImage, answerFiveImage, answerSixImage].forEach() {
+        [backgroundView, heartImage, burgerMenuButton, questionLabel, variantTextField, arrowRightButton, answerOneImage, answerTwoImage, answerThreeImage, answerFourImage, answerFiveImage, answerSixImage].forEach() {
             view.addSubview($0)
         }
     }
@@ -163,6 +173,11 @@ final class DiamondExplosionViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
+        }
+        arrowRightButton.snp.makeConstraints { make in
+            make.top.equalTo(variantTextField.snp.top).offset(16)
+            make.trailing.equalTo(variantTextField.snp.trailing).offset(-16)
+            make.bottom.equalTo(variantTextField.snp.bottom).offset(-16)
         }
         answerOneImage.snp.makeConstraints { make in
             make.top.equalTo(variantTextField.snp.bottom).offset(40)
@@ -202,4 +217,37 @@ final class DiamondExplosionViewController: UIViewController {
         let controller = PauseViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @objc private func arrowRightButtonTapped() {
+        isForwardButtonTapped = true
+        textFieldDidChange(variantTextField)
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        if isForwardButtonTapped {
+            if let enteredText = textField.text?.lowercased() {
+                let answerImages: [String: UIImage?] = [
+                    correctAnswer1.lowercased(): AppImage.diamondAnswer.uiImage,
+                    correctAnswer2.lowercased(): AppImage.topazAnswer.uiImage,
+                    correctAnswer3.lowercased(): AppImage.quartzAnswer.uiImage,
+                    correctAnswer4.lowercased(): AppImage.emeraldAnswer.uiImage,
+                    correctAnswer5.lowercased(): AppImage.rubyAnswer.uiImage,
+                    correctAnswer6.lowercased(): AppImage.sapphireAnswer.uiImage
+                ]
+                let answerImageSlots: [String: UIImageView] = [
+                    correctAnswer1.lowercased(): answerOneImage,
+                    correctAnswer2.lowercased(): answerTwoImage,
+                    correctAnswer3.lowercased(): answerThreeImage,
+                    correctAnswer4.lowercased(): answerFourImage,
+                    correctAnswer5.lowercased(): answerFiveImage,
+                    correctAnswer6.lowercased(): answerSixImage
+                ]
+                if let image = answerImages[enteredText], let answerImageView = answerImageSlots[enteredText] {
+                    answerImageView.image = image
+                }
+            }
+            isForwardButtonTapped = false
+        }
+    }
+
 }
