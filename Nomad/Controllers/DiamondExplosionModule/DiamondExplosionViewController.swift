@@ -17,6 +17,8 @@ final class DiamondExplosionViewController: UIViewController {
     private let correctAnswer5 = "Ruby"
     private let correctAnswer6 = "Sapphire"
     private var isForwardButtonTapped = false
+    private var correctAnswersCount = 0
+    private var remainingHearts = 3
     
     // MARK: - UI
     
@@ -221,6 +223,38 @@ final class DiamondExplosionViewController: UIViewController {
     @objc private func arrowRightButtonTapped() {
         isForwardButtonTapped = true
         textFieldDidChange(variantTextField)
+        
+        if !isAnswerCorrect() {
+            remainingHearts -= 1
+            
+            if remainingHearts == 0 {
+                let loseController = LoseViewController()
+                self.navigationController?.pushViewController(loseController, animated: true)
+            } else {
+
+                updateHeartsImage()
+            }
+        }
+    }
+    
+    private func isAnswerCorrect() -> Bool {
+        if let enteredText = variantTextField.text?.lowercased() {
+            return enteredText == correctAnswer1.lowercased() || enteredText == correctAnswer2.lowercased() || enteredText == correctAnswer3.lowercased() || enteredText == correctAnswer4.lowercased() || enteredText == correctAnswer5.lowercased() || enteredText == correctAnswer6.lowercased()
+        }
+        return false
+    }
+    
+    private func updateHeartsImage() {
+        switch remainingHearts {
+        case 3:
+            heartImage.image = AppImage.threeHearts.uiImage
+        case 2:
+            heartImage.image = AppImage.twoHearts.uiImage
+        case 1:
+            heartImage.image = AppImage.oneHeart.uiImage
+        default:
+            break
+        }
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -244,6 +278,13 @@ final class DiamondExplosionViewController: UIViewController {
                 ]
                 if let image = answerImages[enteredText], let answerImageView = answerImageSlots[enteredText] {
                     answerImageView.image = image
+                    if enteredText == correctAnswer1.lowercased() || enteredText == correctAnswer2.lowercased() || enteredText == correctAnswer3.lowercased() || enteredText == correctAnswer4.lowercased() || enteredText == correctAnswer5.lowercased() || enteredText == correctAnswer6.lowercased() {
+                        correctAnswersCount += 1
+                        if correctAnswersCount == 6 {
+                            let controller = WinViewController()
+                            self.navigationController?.pushViewController(controller, animated: true)
+                        }
+                    }
                 }
             }
             isForwardButtonTapped = false

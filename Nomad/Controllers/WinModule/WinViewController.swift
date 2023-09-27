@@ -55,7 +55,7 @@ final class WinViewController: UIViewController {
     
     private lazy var scoreSubtitle: UILabel = {
         let label = UILabel()
-        label.text = "+65"
+        label.text = "+90"
         label.textColor = AppColor.white.uiColor
         label.font = UIFont(name: "SFProDisplay-Bold", size: 42)
         label.numberOfLines = 0
