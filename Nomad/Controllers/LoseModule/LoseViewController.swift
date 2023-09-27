@@ -157,5 +157,8 @@ final class LoseViewController: UIViewController {
     }
     
     @objc private func nextLevelButtonTapped() {
+        let controller = LevelsViewController()
+        controller.navigationItem.hidesBackButton = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
