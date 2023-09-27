@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1A742002AC3E0D9003F9607 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F1A741FF2AC3E0D9003F9607 /* SkyFloatingLabelTextField */; };
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
 		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
@@ -26,6 +27,7 @@
 		F1C7EA622AC3D27400E20AAC /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA592AC3D27400E20AAC /* SFProDisplay-Medium.ttf */; };
 		F1C7EA662AC3D3B900E20AAC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1C7EA652AC3D3B900E20AAC /* SnapKit */; };
 		F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */; };
+		F1C7EA6C2AC3DB6100E20AAC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA6B2AC3DB6100E20AAC /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,7 @@
 		F1C7EA582AC3D27400E20AAC /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
 		F1C7EA592AC3D27400E20AAC /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F1C7EA6B2AC3DB6100E20AAC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C7EA662AC3D3B900E20AAC /* SnapKit in Frameworks */,
+				F1A742002AC3E0D9003F9607 /* SkyFloatingLabelTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,7 @@
 			children = (
 				F1C7EA632AC3D35500E20AAC /* MainModule */,
 				F1C7EA672AC3D89900E20AAC /* InfoModule */,
+				F1C7EA6A2AC3DB4D00E20AAC /* SettingsModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +190,14 @@
 			path = InfoModule;
 			sourceTree = "<group>";
 		};
+		F1C7EA6A2AC3DB4D00E20AAC /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C7EA6B2AC3DB6100E20AAC /* SettingsViewController.swift */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +216,7 @@
 			name = Nomad;
 			packageProductDependencies = (
 				F1C7EA652AC3D3B900E20AAC /* SnapKit */,
+				F1A741FF2AC3E0D9003F9607 /* SkyFloatingLabelTextField */,
 			);
 			productName = Nomad;
 			productReference = F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */;
@@ -234,6 +248,7 @@
 			mainGroup = F1C7EA232AC3CBD500E20AAC;
 			packageReferences = (
 				F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F1A741FE2AC3E0D9003F9607 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 			);
 			productRefGroup = F1C7EA2D2AC3CBD500E20AAC /* Products */;
 			projectDirPath = "";
@@ -273,6 +288,7 @@
 			files = (
 				F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */,
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,
+				F1C7EA6C2AC3DB6100E20AAC /* SettingsViewController.swift in Sources */,
 				F1C7EA4D2AC3CD5200E20AAC /* AppImage.swift in Sources */,
 				F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */,
 				F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */,
@@ -486,6 +502,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F1A741FE2AC3E0D9003F9607 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -497,6 +521,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F1A741FF2AC3E0D9003F9607 /* SkyFloatingLabelTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1A741FE2AC3E0D9003F9607 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
+		};
 		F1C7EA652AC3D3B900E20AAC /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */;

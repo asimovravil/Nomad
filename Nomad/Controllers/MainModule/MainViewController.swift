@@ -50,6 +50,7 @@ final class MainViewController: UIViewController {
     private lazy var settingsButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.settingsButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -110,6 +111,11 @@ final class MainViewController: UIViewController {
     
     @objc private func infoButtonTapped() {
         let controller = InfoViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func settingsButtonTapped() {
+        let controller = SettingsViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

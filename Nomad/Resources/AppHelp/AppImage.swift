@@ -44,4 +44,12 @@ enum AppImage: String, AppImageProtocol {
     // MARK: - Info
     
     case infoImage
+    
+    // MARK: - Settings
+    
+    case camera
+    case settingsRate
+    case settingsShare
+    case settingsPrivacy
+    case settingsDelete
 }
