@@ -60,7 +60,7 @@ final class LevelsTableViewCell: UITableViewCell {
     
     public lazy var earnedSubTitle: UILabel = {
         let label = UILabel()
-        label.text = "90"
+        label.text = "0"
         label.textColor = AppColor.settingsColor.uiColor
         label.font = UIFont(name: "SFProDisplay-Regular", size: 14)
         label.numberOfLines = 0
