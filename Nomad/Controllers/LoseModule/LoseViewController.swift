@@ -10,6 +10,8 @@ import SnapKit
 
 final class LoseViewController: UIViewController {
 
+    var guessedSubtitleText: String = "0/6"
+    
     // MARK: - UI
     
     private lazy var backgroundView: UIImageView = {
@@ -93,6 +95,7 @@ final class LoseViewController: UIViewController {
         
         setupViews()
         setupConstraints()
+        guessedSubtitle.text = guessedSubtitleText
     }
     
     // MARK: - setupViews

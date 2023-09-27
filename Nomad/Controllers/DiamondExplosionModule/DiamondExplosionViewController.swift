@@ -224,18 +224,27 @@ final class DiamondExplosionViewController: UIViewController {
         isForwardButtonTapped = true
         textFieldDidChange(variantTextField)
         
+        // Если ответ неправильный, уменьшаем количество оставшихся сердец
         if !isAnswerCorrect() {
             remainingHearts -= 1
             
+            // Проверяем, остались ли еще сердца
             if remainingHearts == 0 {
+                // Создаем контроллер LoseViewController
                 let loseController = LoseViewController()
+                
+                // Устанавливаем значение guessedSubtitle
+                loseController.guessedSubtitleText = "\(correctAnswersCount)/6"
+                
+                // Переходим на LoseViewController
                 self.navigationController?.pushViewController(loseController, animated: true)
             } else {
-
+                // Обновляем изображение сердец в соответствии с количеством оставшихся жизней
                 updateHeartsImage()
             }
         }
     }
+
     
     private func isAnswerCorrect() -> Bool {
         if let enteredText = variantTextField.text?.lowercased() {
@@ -290,5 +299,4 @@ final class DiamondExplosionViewController: UIViewController {
             isForwardButtonTapped = false
         }
     }
-
 }
