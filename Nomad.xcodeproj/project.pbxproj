@@ -12,6 +12,7 @@
 		F1A742062AC3EA78003F9607 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742052AC3EA78003F9607 /* PauseViewController.swift */; };
 		F1A742092AC3F707003F9607 /* BonusGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742082AC3F707003F9607 /* BonusGameViewController.swift */; };
 		F1A7420C2AC4008D003F9607 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7420B2AC4008D003F9607 /* WinViewController.swift */; };
+		F1A7420F2AC42A92003F9607 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7420E2AC42A92003F9607 /* LoseViewController.swift */; };
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
 		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
@@ -39,6 +40,7 @@
 		F1A742052AC3EA78003F9607 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		F1A742082AC3F707003F9607 /* BonusGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameViewController.swift; sourceTree = "<group>"; };
 		F1A7420B2AC4008D003F9607 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		F1A7420E2AC42A92003F9607 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = WinModule;
 			sourceTree = "<group>";
 		};
+		F1A7420D2AC42A81003F9607 /* LoseModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1A7420E2AC42A92003F9607 /* LoseViewController.swift */,
+			);
+			path = LoseModule;
+			sourceTree = "<group>";
+		};
 		F1C7EA232AC3CBD500E20AAC = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				F1A742042AC3EA56003F9607 /* PauseModule */,
 				F1A742072AC3F6F4003F9607 /* BonusGameModule */,
 				F1A7420A2AC4007E003F9607 /* WinModule */,
+				F1A7420D2AC42A81003F9607 /* LoseModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +346,7 @@
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,
 				F1C7EA6C2AC3DB6100E20AAC /* SettingsViewController.swift in Sources */,
 				F1C7EA4D2AC3CD5200E20AAC /* AppImage.swift in Sources */,
+				F1A7420F2AC42A92003F9607 /* LoseViewController.swift in Sources */,
 				F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */,
 				F1C7EA692AC3D8C700E20AAC /* InfoViewController.swift in Sources */,
 				F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */,

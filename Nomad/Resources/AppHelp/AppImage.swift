@@ -81,4 +81,6 @@ enum AppImage: String, AppImageProtocol {
     // MARK: - Lose
     
     case loseYou
+    case menuLose
+    case tryAgain
 }
