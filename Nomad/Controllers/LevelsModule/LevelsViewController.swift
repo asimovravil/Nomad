@@ -138,7 +138,7 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.playButton.setImage(AppImage.coin400.uiImage, for: .normal)
         case 4:
             cell.namelevel = "Diamond Explosion"
-            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
+            cell.playButton.setImage(AppImage.coin500.uiImage, for: .normal)
         default:
             cell.namelevel = nil
         }
