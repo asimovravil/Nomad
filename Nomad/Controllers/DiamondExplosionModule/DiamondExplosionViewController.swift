@@ -64,6 +64,53 @@ final class DiamondExplosionViewController: UIViewController {
         return textField
     }()
 
+    private lazy var answerOneImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer1.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var answerTwoImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer2.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var answerThreeImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer3.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var answerFourImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer4.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var answerFiveImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer5.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var answerSixImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.answer6.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
 
     // MARK: - Lifecycle
     
@@ -77,7 +124,7 @@ final class DiamondExplosionViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, heartImage, burgerMenuButton, questionLabel, variantTextField].forEach() {
+        [backgroundView, heartImage, burgerMenuButton, questionLabel, variantTextField, answerOneImage, answerTwoImage, answerThreeImage, answerFourImage, answerFiveImage, answerSixImage].forEach() {
             view.addSubview($0)
         }
     }
@@ -106,6 +153,36 @@ final class DiamondExplosionViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(56)
+        }
+        answerOneImage.snp.makeConstraints { make in
+            make.top.equalTo(variantTextField.snp.bottom).offset(40)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        answerTwoImage.snp.makeConstraints { make in
+            make.top.equalTo(answerOneImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        answerThreeImage.snp.makeConstraints { make in
+            make.top.equalTo(answerTwoImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        answerFourImage.snp.makeConstraints { make in
+            make.top.equalTo(answerThreeImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        answerFiveImage.snp.makeConstraints { make in
+            make.top.equalTo(answerFourImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        answerSixImage.snp.makeConstraints { make in
+            make.top.equalTo(answerFiveImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
         }
     }
 }

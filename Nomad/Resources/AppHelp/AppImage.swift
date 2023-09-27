@@ -34,6 +34,12 @@ enum AppImage: String, AppImageProtocol {
     
     // MARK: - AppImage
     
+    case answer1
+    case answer2
+    case answer3
+    case answer4
+    case answer5
+    case answer6
     case background
     case close
     case oneHeart
