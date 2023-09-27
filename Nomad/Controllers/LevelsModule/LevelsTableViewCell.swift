@@ -11,6 +11,7 @@ import SnapKit
 final class LevelsTableViewCell: UITableViewCell {
 
     static let reuseID = String(describing: LevelsTableViewCell.self)
+    var playButtonTappedHandler: (() -> Void)?
     
     // MARK: - UI
     
@@ -69,6 +70,7 @@ final class LevelsTableViewCell: UITableViewCell {
     public lazy var playButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.startLevel.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -133,5 +135,11 @@ final class LevelsTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func playButtonTapped() {
+        playButtonTappedHandler?()
     }
 }

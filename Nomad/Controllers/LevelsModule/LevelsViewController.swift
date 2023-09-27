@@ -112,25 +112,33 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LevelsTableViewCell.reuseID, for: indexPath) as? LevelsTableViewCell else {
             fatalError("Could not cast to LevelsTableViewCell")
         }
-        if indexPath.row == 3 {
-            cell.playButton.setImage(AppImage.coin400.uiImage, for: .normal)
-        } else if indexPath.row == 4 {
-            cell.playButton.setImage(AppImage.coin500.uiImage, for: .normal)
+        
+        if indexPath.item == 0 {
+            cell.playButtonTappedHandler = { [weak self] in
+                let controller = DiamondExplosionViewController()
+                controller.navigationItem.hidesBackButton = true
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
         } else {
-            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
+            cell.playButtonTappedHandler = nil
         }
         
         switch indexPath.row {
         case 0:
             cell.namelevel = "Diamond Explosion"
+            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
         case 1:
             cell.namelevel = "Fruits"
+            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
         case 2:
             cell.namelevel = "Gold Rush"
+            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
         case 3:
             cell.namelevel = "Mysterious Egypt"
+            cell.playButton.setImage(AppImage.coin400.uiImage, for: .normal)
         case 4:
             cell.namelevel = "Diamond Explosion"
+            cell.playButton.setImage(AppImage.startLevel.uiImage, for: .normal)
         default:
             cell.namelevel = nil
         }

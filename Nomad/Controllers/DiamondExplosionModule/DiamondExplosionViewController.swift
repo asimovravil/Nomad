@@ -31,6 +31,7 @@ final class DiamondExplosionViewController: UIViewController {
     private lazy var burgerMenuButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.burgerMenu.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(burgerMenuButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -119,6 +120,15 @@ final class DiamondExplosionViewController: UIViewController {
         
         setupViews()
         setupConstraints()
+        
+        let burgerMenuBarButtonItem = UIBarButtonItem(customView: burgerMenuButton)
+        navigationItem.rightBarButtonItem = burgerMenuBarButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     // MARK: - setupViews
@@ -184,5 +194,12 @@ final class DiamondExplosionViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func burgerMenuButtonTapped() {
+        let controller = PauseViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

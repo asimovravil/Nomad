@@ -110,9 +110,12 @@ final class PauseViewController: UIViewController {
     // MARK: - Action
     
     @objc private func continuePauseButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func restartPauseButtonTapped() {
+        let controller = LevelsViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc private func infoPauseButtonTapped() {
