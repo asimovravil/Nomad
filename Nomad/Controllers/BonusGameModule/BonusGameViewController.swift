@@ -14,7 +14,7 @@ final class BonusGameViewController: UIViewController {
     
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .purple
+        imageView.image = AppImage.background.uiImage
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView

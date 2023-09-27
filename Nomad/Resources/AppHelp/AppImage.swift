@@ -34,11 +34,11 @@ enum AppImage: String, AppImageProtocol {
     
     // MARK: - AppImage
     
+    case background
     case close
     
     // MARK: - Main
     
-    case background
     case nomadLogo
     case playButton
     case vibratorButton
@@ -69,4 +69,16 @@ enum AppImage: String, AppImageProtocol {
     case bonusGameLogo
     case correct
     case correctAnswer
+    
+    // MARK: - Win
+    
+    case winFeat
+    case winMenu
+    case winNextLevel
+    case coin
+    case winYou
+    
+    // MARK: - Lose
+    
+    case loseYou
 }
