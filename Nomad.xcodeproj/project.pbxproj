@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
-		F1C7EA342AC3CBD500E20AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* ViewController.swift */; };
+		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
 		F1C7EA392AC3CBD600E20AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA382AC3CBD600E20AAC /* Assets.xcassets */; };
 		F1C7EA3C2AC3CBD600E20AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA3A2AC3CBD600E20AAC /* LaunchScreen.storyboard */; };
 		F1C7EA4A2AC3CD3900E20AAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA492AC3CD3900E20AAC /* Colors.xcassets */; };
@@ -24,13 +24,14 @@
 		F1C7EA602AC3D27400E20AAC /* SFProDisplay-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA572AC3D27400E20AAC /* SFProDisplay-Ultralight.ttf */; };
 		F1C7EA612AC3D27400E20AAC /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA582AC3D27400E20AAC /* SFProDisplay-Black.ttf */; };
 		F1C7EA622AC3D27400E20AAC /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C7EA592AC3D27400E20AAC /* SFProDisplay-Medium.ttf */; };
+		F1C7EA662AC3D3B900E20AAC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1C7EA652AC3D3B900E20AAC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1C7EA332AC3CBD500E20AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1C7EA382AC3CBD600E20AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C7EA3B2AC3CBD600E20AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1C7EA3D2AC3CBD600E20AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C7EA662AC3D3B900E20AAC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +111,7 @@
 		F1C7EA452AC3CC4600E20AAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F1C7EA332AC3CBD500E20AAC /* ViewController.swift */,
+				F1C7EA632AC3D35500E20AAC /* MainModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +166,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F1C7EA632AC3D35500E20AAC /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +190,9 @@
 			dependencies = (
 			);
 			name = Nomad;
+			packageProductDependencies = (
+				F1C7EA652AC3D3B900E20AAC /* SnapKit */,
+			);
 			productName = Nomad;
 			productReference = F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +221,9 @@
 				Base,
 			);
 			mainGroup = F1C7EA232AC3CBD500E20AAC;
+			packageReferences = (
+				F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F1C7EA2D2AC3CBD500E20AAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C7EA342AC3CBD500E20AAC /* ViewController.swift in Sources */,
+				F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */,
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,
 				F1C7EA4D2AC3CD5200E20AAC /* AppImage.swift in Sources */,
 				F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */,
@@ -456,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1C7EA652AC3D3B900E20AAC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1C7EA642AC3D3B900E20AAC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1C7EA242AC3CBD500E20AAC /* Project object */;
 }
