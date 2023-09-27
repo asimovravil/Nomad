@@ -52,4 +52,11 @@ enum AppImage: String, AppImageProtocol {
     case settingsShare
     case settingsPrivacy
     case settingsDelete
+    
+    // MARK: - Pause
+    
+    case pauseContinue
+    case pauseRestart
+    case pauseInfo
+    case pauseHome
 }
