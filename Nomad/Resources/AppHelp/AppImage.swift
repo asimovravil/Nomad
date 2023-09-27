@@ -32,6 +32,10 @@ extension AppImageProtocol {
 
 enum AppImage: String, AppImageProtocol {
     
+    // MARK: - AppImage
+    
+    case close
+    
     // MARK: - Main
     
     case background
@@ -59,4 +63,10 @@ enum AppImage: String, AppImageProtocol {
     case pauseRestart
     case pauseInfo
     case pauseHome
+    
+    // MARK: - BonusGame
+    
+    case bonusGameLogo
+    case correct
+    case correctAnswer
 }
