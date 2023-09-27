@@ -36,6 +36,11 @@ enum AppImage: String, AppImageProtocol {
     
     case background
     case close
+    case oneHeart
+    case twoHearts
+    case threeHearts
+    case burgerMenu
+    case arrowRight
     
     // MARK: - Main
     
