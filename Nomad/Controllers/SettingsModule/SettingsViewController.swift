@@ -10,6 +10,8 @@ import SnapKit
 
 final class SettingsViewController: UIViewController {
 
+    private var savedName: String?
+    
     // MARK: - UI
     
     private lazy var backgroundView: UIImageView = {
@@ -37,6 +39,13 @@ final class SettingsViewController: UIViewController {
         textField.leftViewMode = .always
         textField.keyboardType = .default
         return textField
+    }()
+    
+    private lazy var arrowRightButton: UIButton = {
+        let button = UIButton()
+        button.setImage(AppImage.arrowRight.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(arrowRightButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     private lazy var lineView: UIView = {
@@ -80,12 +89,16 @@ final class SettingsViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupNavigationBar()
+        
+        if let savedName = UserDefaults.standard.string(forKey: "userName") {
+            nameTextField.text = savedName
+        }
     }
     
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, cameraImage, nameTextField, lineView, rateButton, shareButton, privacyButton, deleteButton].forEach() {
+        [backgroundView, cameraImage, nameTextField, arrowRightButton, lineView, rateButton, shareButton, privacyButton, deleteButton].forEach() {
             view.addSubview($0)
         }
     }
@@ -103,6 +116,11 @@ final class SettingsViewController: UIViewController {
         nameTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(165)
             make.leading.equalTo(cameraImage.snp.trailing).offset(20)
+        }
+        arrowRightButton.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.top).offset(16)
+            make.trailing.equalToSuperview().offset(-32)
+            make.bottom.equalTo(nameTextField.snp.bottom).offset(-16)
         }
         lineView.snp.makeConstraints { make in
             make.top.equalTo(nameTextField.snp.bottom).offset(12)
@@ -208,6 +226,12 @@ final class SettingsViewController: UIViewController {
             UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
         } else {
             print("Unable to open App Store URL")
+        }
+    }
+    
+    @objc private func arrowRightButtonTapped() {
+        if let newName = nameTextField.text {
+            UserDefaults.standard.set(newName, forKey: "userName")
         }
     }
 }
