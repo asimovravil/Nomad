@@ -10,6 +10,8 @@ import SnapKit
 
 final class MainViewController: UIViewController {
 
+    private var isVibratorActive = false
+    
     // MARK: - UI
     
     private lazy var backgroundView: UIImageView = {
@@ -38,6 +40,7 @@ final class MainViewController: UIViewController {
     private lazy var vibratorButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.vibratorButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(vibratorButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -113,6 +116,27 @@ final class MainViewController: UIViewController {
     @objc private func playButtonTapped() {
         let controller = LevelsViewController()
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func vibratorButtonTapped() {
+        if isVibratorActive {
+            turnOffVibration()
+            vibratorButton.setImage(AppImage.vibratorButton.uiImage, for: .normal)
+        } else {
+            turnOnVibration()
+            vibratorButton.setImage(AppImage.vibratorClose.uiImage, for: .normal)
+        }
+        isVibratorActive.toggle()
+    }
+    
+    private func turnOnVibration() {
+        let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
+    }
+    
+    private func turnOffVibration() {
+        print("turn off vibration")
     }
     
     @objc private func infoButtonTapped() {

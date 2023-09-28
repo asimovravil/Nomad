@@ -55,6 +55,7 @@ enum AppImage: String, AppImageProtocol {
     case vibratorButton
     case settingsButton
     case infoButton
+    case vibratorClose
     
     // MARK: - Levels
     
