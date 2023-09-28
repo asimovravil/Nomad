@@ -9,32 +9,26 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
+    var navigation: UINavigationController!
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
         window?.overrideUserInterfaceStyle = .dark
+        window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
-        
+    
         ExternalService.shared.request { [weak self] url in
             if let url = url {
-                DispatchQueue.main.async {
-                    let splashViewController = SplashViewController(url: url)
-                    self?.window?.rootViewController = splashViewController
-                }
+                self?.window?.rootViewController = LoadingViewController(url: url)
             } else {
                 if !AppStorage.isOnboardingShowed {
-                    let mainViewController = MainViewController()
-                    let navigationController = UINavigationController(rootViewController: mainViewController)
-                    navigationController.isNavigationBarHidden = true
-                    self?.window?.rootViewController = navigationController
-                } else {
-                    let mainViewController = MainViewController()
-                    let navigationController = UINavigationController(rootViewController: mainViewController)
-                    navigationController.isNavigationBarHidden = true
-                    self?.window?.rootViewController = navigationController
+                    self?.navigation = UINavigationController(
+                        rootViewController: MainViewController()
+                    )
                 }
+                self?.navigation.isNavigationBarHidden = true
+                self?.window?.rootViewController = self?.navigation
             }
         }
     }

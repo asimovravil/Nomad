@@ -17,11 +17,12 @@
 		F1A742172AC44861003F9607 /* DiamondExplosionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742162AC44861003F9607 /* DiamondExplosionViewController.swift */; };
 		F1A742202AC52796003F9607 /* FruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7421F2AC52796003F9607 /* FruitsViewController.swift */; };
 		F1A742232AC52B8F003F9607 /* GoldRushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742222AC52B8F003F9607 /* GoldRushViewController.swift */; };
-		F1A742262AC530D3003F9607 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742252AC530D3003F9607 /* SplashViewController.swift */; };
+		F1A742262AC530D3003F9607 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742252AC530D3003F9607 /* LoadingViewController.swift */; };
 		F1A742282AC5325E003F9607 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742272AC5325E003F9607 /* AppStorage.swift */; };
 		F1A7422A2AC5334A003F9607 /* ExternalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742292AC5334A003F9607 /* ExternalService.swift */; };
 		F1A7422D2AC53453003F9607 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F1A7422C2AC53453003F9607 /* FirebaseFirestore */; };
 		F1A7422F2AC536E2003F9607 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1A7422E2AC536E2003F9607 /* GoogleService-Info.plist */; };
+		F1A742312AC546ED003F9607 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742302AC546ED003F9607 /* SplashViewController.swift */; };
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
 		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
@@ -54,10 +55,11 @@
 		F1A742162AC44861003F9607 /* DiamondExplosionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondExplosionViewController.swift; sourceTree = "<group>"; };
 		F1A7421F2AC52796003F9607 /* FruitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewController.swift; sourceTree = "<group>"; };
 		F1A742222AC52B8F003F9607 /* GoldRushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldRushViewController.swift; sourceTree = "<group>"; };
-		F1A742252AC530D3003F9607 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F1A742252AC530D3003F9607 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F1A742272AC5325E003F9607 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 		F1A742292AC5334A003F9607 /* ExternalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalService.swift; sourceTree = "<group>"; };
 		F1A7422E2AC536E2003F9607 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1A742302AC546ED003F9607 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +168,8 @@
 		F1A742242AC530C1003F9607 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				F1A742252AC530D3003F9607 /* SplashViewController.swift */,
+				F1A742252AC530D3003F9607 /* LoadingViewController.swift */,
+				F1A742302AC546ED003F9607 /* SplashViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -405,7 +408,7 @@
 				F1A742142AC43E41003F9607 /* LevelsTableViewCell.swift in Sources */,
 				F1A742202AC52796003F9607 /* FruitsViewController.swift in Sources */,
 				F1A742092AC3F707003F9607 /* BonusGameViewController.swift in Sources */,
-				F1A742262AC530D3003F9607 /* SplashViewController.swift in Sources */,
+				F1A742262AC530D3003F9607 /* LoadingViewController.swift in Sources */,
 				F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */,
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,
 				F1A7422A2AC5334A003F9607 /* ExternalService.swift in Sources */,
@@ -421,6 +424,7 @@
 				F1A742282AC5325E003F9607 /* AppStorage.swift in Sources */,
 				F1A742232AC52B8F003F9607 /* GoldRushViewController.swift in Sources */,
 				F1A7420C2AC4008D003F9607 /* WinViewController.swift in Sources */,
+				F1A742312AC546ED003F9607 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
