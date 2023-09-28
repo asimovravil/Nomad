@@ -8,23 +8,34 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
-    func scene(_ scene: UIScene,
-               willConnectTo session: UISceneSession,
-               options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let window = UIWindow(windowScene: windowScene)
-        window.overrideUserInterfaceStyle = .dark
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let scene = (scene as? UIWindowScene) else { return }
         
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+        window = UIWindow(windowScene: scene)
+        window?.overrideUserInterfaceStyle = .dark
+        window?.makeKeyAndVisible()
         
-        window.rootViewController = navigationController
-        self.window = window
-        window.makeKeyAndVisible()
+        ExternalService.shared.request { [weak self] url in
+            if let url = url {
+                DispatchQueue.main.async {
+                    let splashViewController = SplashViewController(url: url)
+                    self?.window?.rootViewController = splashViewController
+                }
+            } else {
+                if !AppStorage.isOnboardingShowed {
+                    let mainViewController = MainViewController()
+                    let navigationController = UINavigationController(rootViewController: mainViewController)
+                    navigationController.isNavigationBarHidden = true
+                    self?.window?.rootViewController = navigationController
+                } else {
+                    let mainViewController = MainViewController()
+                    let navigationController = UINavigationController(rootViewController: mainViewController)
+                    navigationController.isNavigationBarHidden = true
+                    self?.window?.rootViewController = navigationController
+                }
+            }
+        }
     }
 }
-

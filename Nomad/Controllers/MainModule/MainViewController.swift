@@ -11,6 +11,7 @@ import SnapKit
 final class MainViewController: UIViewController {
 
     private var isVibratorActive = false
+    var didTapStartHandler: (() -> Void)?
     
     // MARK: - UI
     
@@ -147,6 +148,10 @@ final class MainViewController: UIViewController {
     @objc private func settingsButtonTapped() {
         let controller = SettingsViewController()
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func handleStartButtonTapped() {
+        didTapStartHandler?()
     }
 }
 
