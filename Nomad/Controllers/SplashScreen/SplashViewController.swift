@@ -109,6 +109,14 @@ class SplashViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
+    
+    // MARK: - Action
+    
+    private func startRotationAnimation() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .curveLinear], animations: {
+            self.splashLoadingImage.transform = self.splashLoadingImage.transform.rotated(by: .pi)
+        }, completion: nil)
+    }
 }
 
 extension SplashViewController: WKNavigationDelegate {
@@ -123,12 +131,6 @@ extension SplashViewController: WKNavigationDelegate {
             AppStorage.url = redirectedUrl
         }
         decisionHandler(.allow)
-    }
-    
-    private func startRotationAnimation() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .curveLinear], animations: {
-            self.splashLoadingImage.transform = self.splashLoadingImage.transform.rotated(by: .pi)
-        }, completion: nil)
     }
     
     private func saveCookie() {
