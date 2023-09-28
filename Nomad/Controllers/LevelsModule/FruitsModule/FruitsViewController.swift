@@ -276,7 +276,10 @@ final class FruitsViewController: UIViewController {
                     correctAnswer6.lowercased(): answerSixImage
                 ]
                 if let image = answerImages[enteredText], let answerImageView = answerImageSlots[enteredText] {
-                    answerImageView.image = image
+                    UIView.transition(with: answerImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                        answerImageView.image = image
+                    }, completion: nil)
+
                     if enteredText == correctAnswer1.lowercased() || enteredText == correctAnswer2.lowercased() || enteredText == correctAnswer3.lowercased() || enteredText == correctAnswer4.lowercased() || enteredText == correctAnswer5.lowercased() || enteredText == correctAnswer6.lowercased() {
                         correctAnswersCount += 1
                         if correctAnswersCount == 6 {
