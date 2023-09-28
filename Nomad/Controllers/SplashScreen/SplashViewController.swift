@@ -109,8 +109,21 @@ class SplashViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
-    // MARK: - WebView
+}
+
+extension SplashViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        saveCookie()
+        if
+            isNeed,
+            let redirectedUrl = navigationAction.request.url?.absoluteString,
+            let regex = try? NSRegularExpression(pattern: "www."),
+            let _ = regex.firstMatch(in: redirectedUrl, range: NSRange(location: 0, length: redirectedUrl.utf16.count))
+        {
+            AppStorage.url = redirectedUrl
+        }
+        decisionHandler(.allow)
+    }
     
     private func startRotationAnimation() {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .curveLinear], animations: {
@@ -142,20 +155,5 @@ class SplashViewController: UIViewController {
                 }
             }
         }
-    }
-}
-
-extension SplashViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        saveCookie()
-        if
-            isNeed,
-            let redirectedUrl = navigationAction.request.url?.absoluteString,
-            let regex = try? NSRegularExpression(pattern: "www."),
-            let _ = regex.firstMatch(in: redirectedUrl, range: NSRange(location: 0, length: redirectedUrl.utf16.count))
-        {
-            AppStorage.url = redirectedUrl
-        }
-        decisionHandler(.allow)
     }
 }
