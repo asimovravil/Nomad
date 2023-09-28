@@ -84,6 +84,7 @@
 		F1A742012AC3E4BA003F9607 /* LevelsModule */ = {
 			isa = PBXGroup;
 			children = (
+				F1A742152AC44841003F9607 /* DiamondExplosionModule */,
 				F1A742022AC3E519003F9607 /* LevelsViewController.swift */,
 				F1A742132AC43E41003F9607 /* LevelsTableViewCell.swift */,
 			);
@@ -184,7 +185,6 @@
 				F1C7EA672AC3D89900E20AAC /* InfoModule */,
 				F1C7EA6A2AC3DB4D00E20AAC /* SettingsModule */,
 				F1A742012AC3E4BA003F9607 /* LevelsModule */,
-				F1A742152AC44841003F9607 /* DiamondExplosionModule */,
 				F1A742042AC3EA56003F9607 /* PauseModule */,
 				F1A742072AC3F6F4003F9607 /* BonusGameModule */,
 				F1A7420A2AC4007E003F9607 /* WinModule */,
