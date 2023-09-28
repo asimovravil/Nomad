@@ -42,7 +42,7 @@ final class LevelsViewController: UIViewController {
     
     private lazy var coinSubtitle: UILabel = {
         let label = UILabel()
-        label.text = "0"
+        label.text = "150"
         label.textColor = AppColor.white.uiColor
         label.font = UIFont(name: "SFProDisplay-Bold", size: 16)
         label.numberOfLines = 0
