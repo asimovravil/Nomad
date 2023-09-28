@@ -115,6 +115,7 @@ final class PauseViewController: UIViewController {
     
     @objc private func restartPauseButtonTapped() {
         let controller = LevelsViewController()
+        controller.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

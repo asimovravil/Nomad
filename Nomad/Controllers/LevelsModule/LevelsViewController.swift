@@ -112,19 +112,26 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LevelsTableViewCell.reuseID, for: indexPath) as? LevelsTableViewCell else {
             fatalError("Could not cast to LevelsTableViewCell")
         }
-        if indexPath.item == 0 {
+        switch indexPath.item {
+        case 0:
             cell.playButtonTappedHandler = { [weak self] in
                 let controller = DiamondExplosionViewController()
                 controller.navigationItem.hidesBackButton = true
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
-        } else if indexPath.item == 1 {
+        case 1:
             cell.playButtonTappedHandler = { [weak self] in
                 let controller = FruitsViewController()
                 controller.navigationItem.hidesBackButton = true
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
-        } else {
+        case 2:
+            cell.playButtonTappedHandler = { [weak self] in
+                let controller = GoldRushViewController()
+                controller.navigationItem.hidesBackButton = true
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
+        default:
             cell.playButtonTappedHandler = nil
         }
         

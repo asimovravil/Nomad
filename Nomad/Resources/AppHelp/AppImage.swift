@@ -80,6 +80,13 @@ enum AppImage: String, AppImageProtocol {
     case pineappleAnswer
     case watermelonAnswer
     
+    case californiaAnswer
+    case alaskaAnswer
+    case nevadaAnswer
+    case coloradoAnswer
+    case arizonaAnswer
+    case oregonAnswer
+    
     // MARK: - Info
     
     case infoImage
