@@ -73,6 +73,13 @@ enum AppImage: String, AppImageProtocol {
     case rubyAnswer
     case sapphireAnswer
     
+    case appleAnswer
+    case bananaAnswer
+    case mangoAnswer
+    case strawberryAnswer
+    case pineappleAnswer
+    case watermelonAnswer
+    
     // MARK: - Info
     
     case infoImage

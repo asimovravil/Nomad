@@ -15,6 +15,7 @@
 		F1A7420F2AC42A92003F9607 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7420E2AC42A92003F9607 /* LoseViewController.swift */; };
 		F1A742142AC43E41003F9607 /* LevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742132AC43E41003F9607 /* LevelsTableViewCell.swift */; };
 		F1A742172AC44861003F9607 /* DiamondExplosionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742162AC44861003F9607 /* DiamondExplosionViewController.swift */; };
+		F1A742202AC52796003F9607 /* FruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7421F2AC52796003F9607 /* FruitsViewController.swift */; };
 		F1C7EA302AC3CBD500E20AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */; };
 		F1C7EA322AC3CBD500E20AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */; };
 		F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7EA332AC3CBD500E20AAC /* MainViewController.swift */; };
@@ -45,6 +46,7 @@
 		F1A7420E2AC42A92003F9607 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		F1A742132AC43E41003F9607 /* LevelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewCell.swift; sourceTree = "<group>"; };
 		F1A742162AC44861003F9607 /* DiamondExplosionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondExplosionViewController.swift; sourceTree = "<group>"; };
+		F1A7421F2AC52796003F9607 /* FruitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewController.swift; sourceTree = "<group>"; };
 		F1C7EA2C2AC3CBD500E20AAC /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C7EA2F2AC3CBD500E20AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C7EA312AC3CBD500E20AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A742152AC44841003F9607 /* DiamondExplosionModule */,
+				F1A7421E2AC52781003F9607 /* FruitsModule */,
 				F1A742022AC3E519003F9607 /* LevelsViewController.swift */,
 				F1A742132AC43E41003F9607 /* LevelsTableViewCell.swift */,
 			);
@@ -129,6 +132,14 @@
 				F1A742162AC44861003F9607 /* DiamondExplosionViewController.swift */,
 			);
 			path = DiamondExplosionModule;
+			sourceTree = "<group>";
+		};
+		F1A7421E2AC52781003F9607 /* FruitsModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1A7421F2AC52796003F9607 /* FruitsViewController.swift */,
+			);
+			path = FruitsModule;
 			sourceTree = "<group>";
 		};
 		F1C7EA232AC3CBD500E20AAC = {
@@ -356,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A742142AC43E41003F9607 /* LevelsTableViewCell.swift in Sources */,
+				F1A742202AC52796003F9607 /* FruitsViewController.swift in Sources */,
 				F1A742092AC3F707003F9607 /* BonusGameViewController.swift in Sources */,
 				F1C7EA342AC3CBD500E20AAC /* MainViewController.swift in Sources */,
 				F1C7EA4F2AC3CD5900E20AAC /* AppColor.swift in Sources */,

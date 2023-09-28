@@ -118,6 +118,12 @@ extension LevelsViewController: UITableViewDataSource, UITableViewDelegate {
                 controller.navigationItem.hidesBackButton = true
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
+        } else if indexPath.item == 1 {
+            cell.playButtonTappedHandler = { [weak self] in
+                let controller = FruitsViewController()
+                controller.navigationItem.hidesBackButton = true
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
         } else {
             cell.playButtonTappedHandler = nil
         }
