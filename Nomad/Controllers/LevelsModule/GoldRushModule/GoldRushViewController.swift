@@ -22,6 +22,9 @@ final class GoldRushViewController: UIViewController {
     
     // MARK: - UI
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = AppImage.background.uiImage
@@ -145,18 +148,27 @@ final class GoldRushViewController: UIViewController {
     
     private func setupViews() {
         [backgroundView, heartImage, burgerMenuButton, questionLabel, variantTextField, arrowRightButton, answerOneImage, answerTwoImage, answerThreeImage, answerFourImage, answerFiveImage, answerSixImage].forEach() {
-            view.addSubview($0)
+            contentView.addSubview($0)
         }
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
     }
     
     // MARK: - setupConstraints
     
     private func setupConstraints() {
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(view)
+        }
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         questionLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(128)
+            make.top.equalToSuperview().offset(34)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }

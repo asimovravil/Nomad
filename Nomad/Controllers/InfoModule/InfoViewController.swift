@@ -20,50 +20,17 @@ final class InfoViewController: UIViewController {
         return imageView
     }()
     
-    public lazy var firstInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "The goal of the participants of the game is to guess the most common answers of people to the proposed questions, to which it is impossible to give an unambiguous objective answer, for example, \"What kind of food do the French like the most?\""
-        label.textColor = AppColor.white.uiColor
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private lazy var levelImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = AppImage.levelInfo.uiImage
-        imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    public lazy var secondInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "You will only have 3 chances to miss the answer. The game will end in the case of all open answers or when all lives are spent."
-        label.textColor = AppColor.white.uiColor
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private lazy var heartImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = AppImage.heartInfo.uiImage
-        imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    public lazy var thirdInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "The answers are sometimes completely unpredictable and very funny."
-        label.textColor = AppColor.white.uiColor
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        return label
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(InfoTableViewCell.self, forCellReuseIdentifier: InfoTableViewCell.reuseID)
+        tableView.layer.cornerRadius = 26
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = 650
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        return tableView
     }()
     
     // MARK: - Lifecycle
@@ -79,7 +46,7 @@ final class InfoViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, firstInfoLabel, levelImage, secondInfoLabel, heartImage, thirdInfoLabel].forEach() {
+        [backgroundView, tableView].forEach() {
             view.addSubview($0)
         }
     }
@@ -90,28 +57,9 @@ final class InfoViewController: UIViewController {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        firstInfoLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(149)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-        levelImage.snp.makeConstraints { make in
-            make.top.equalTo(firstInfoLabel.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(24)
-        }
-        secondInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(levelImage.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-        heartImage.snp.makeConstraints { make in
-            make.top.equalTo(secondInfoLabel.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(24)
-        }
-        thirdInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(heartImage.snp.bottom).offset(24)
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(80)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
     
@@ -126,5 +74,24 @@ final class InfoViewController: UIViewController {
         
         navigationItem.titleView = titleLabel
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
+extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoTableViewCell.reuseID, for: indexPath) as? InfoTableViewCell else {
+            fatalError("Could not cast to InfoTableViewCell")
+        }
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

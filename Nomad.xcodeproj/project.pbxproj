@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13A687F2AC7328C0027C76B /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13A687E2AC7328C0027C76B /* InfoTableViewCell.swift */; };
 		F1A742002AC3E0D9003F9607 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F1A741FF2AC3E0D9003F9607 /* SkyFloatingLabelTextField */; };
 		F1A742032AC3E519003F9607 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742022AC3E519003F9607 /* LevelsViewController.swift */; };
 		F1A742062AC3EA78003F9607 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A742052AC3EA78003F9607 /* PauseViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F13A687E2AC7328C0027C76B /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		F1A742022AC3E519003F9607 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		F1A742052AC3EA78003F9607 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		F1A742082AC3F707003F9607 /* BonusGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C7EA682AC3D8C700E20AAC /* InfoViewController.swift */,
+				F13A687E2AC7328C0027C76B /* InfoTableViewCell.swift */,
 			);
 			path = InfoModule;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				F1A742062AC3EA78003F9607 /* PauseViewController.swift in Sources */,
 				F1A742282AC5325E003F9607 /* AppStorage.swift in Sources */,
 				F1A742232AC52B8F003F9607 /* GoldRushViewController.swift in Sources */,
+				F13A687F2AC7328C0027C76B /* InfoTableViewCell.swift in Sources */,
 				F1A7420C2AC4008D003F9607 /* WinViewController.swift in Sources */,
 				F1A742312AC546ED003F9607 /* SplashViewController.swift in Sources */,
 			);
