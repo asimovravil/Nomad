@@ -100,6 +100,10 @@ final class LevelsViewController: UIViewController {
         
         navigationItem.titleView = titleLabel
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        let coinImageBarButtonItem = UIBarButtonItem(customView: coinImageView)
+        let coinSubtitleBarButtonItem = UIBarButtonItem(customView: coinSubtitle)
+        navigationItem.rightBarButtonItems = [coinSubtitleBarButtonItem, coinImageBarButtonItem]
     }
 }
 

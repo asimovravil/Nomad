@@ -132,9 +132,7 @@ final class FruitsViewController: UIViewController {
         
         setupViews()
         setupConstraints()
-        
-        let burgerMenuBarButtonItem = UIBarButtonItem(customView: burgerMenuButton)
-        navigationItem.rightBarButtonItem = burgerMenuBarButtonItem
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,14 +154,6 @@ final class FruitsViewController: UIViewController {
     private func setupConstraints() {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-        heartImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(71)
-            make.leading.equalToSuperview().offset(24)
-        }
-        burgerMenuButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.trailing.equalToSuperview().offset(-24)
         }
         questionLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(128)
@@ -211,6 +201,16 @@ final class FruitsViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
+    }
+    
+    // MARK: - setupNavigationBar
+    
+    private func setupNavigationBar() {
+        let heartBarButtonItem = UIBarButtonItem(customView: heartImage)
+        navigationItem.leftBarButtonItem = heartBarButtonItem
+        let burgerMenuBarButtonItem = UIBarButtonItem(customView: burgerMenuButton)
+        navigationItem.rightBarButtonItem = burgerMenuBarButtonItem
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     // MARK: - Actions

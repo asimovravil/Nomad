@@ -91,6 +91,8 @@ enum AppImage: String, AppImageProtocol {
     // MARK: - Info
     
     case infoImage
+    case heartInfo
+    case levelInfo
     
     // MARK: - Settings
     

@@ -114,7 +114,7 @@ final class SettingsViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
         }
         nameTextField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(165)
+            make.centerY.equalTo(cameraImage.snp.centerY)
             make.leading.equalTo(cameraImage.snp.trailing).offset(20)
         }
         arrowRightButton.snp.makeConstraints { make in
@@ -123,7 +123,7 @@ final class SettingsViewController: UIViewController {
             make.bottom.equalTo(nameTextField.snp.bottom).offset(-16)
         }
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(12)
+            make.top.equalTo(nameTextField.snp.bottom).offset(3)
             make.leading.equalTo(cameraImage.snp.trailing).offset(20)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(1)

@@ -20,12 +20,50 @@ final class InfoViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var infoImage: UIImageView = {
+    public lazy var firstInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "The goal of the participants of the game is to guess the most common answers of people to the proposed questions, to which it is impossible to give an unambiguous objective answer, for example, \"What kind of food do the French like the most?\""
+        label.textColor = AppColor.white.uiColor
+        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        return label
+    }()
+    
+    private lazy var levelImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = AppImage.infoImage.uiImage
+        imageView.image = AppImage.levelInfo.uiImage
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
+    }()
+    
+    public lazy var secondInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "You will only have 3 chances to miss the answer. The game will end in the case of all open answers or when all lives are spent."
+        label.textColor = AppColor.white.uiColor
+        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        return label
+    }()
+    
+    private lazy var heartImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.heartInfo.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    public lazy var thirdInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "The answers are sometimes completely unpredictable and very funny."
+        label.textColor = AppColor.white.uiColor
+        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        return label
     }()
     
     // MARK: - Lifecycle
@@ -41,7 +79,7 @@ final class InfoViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, infoImage].forEach() {
+        [backgroundView, firstInfoLabel, levelImage, secondInfoLabel, heartImage, thirdInfoLabel].forEach() {
             view.addSubview($0)
         }
     }
@@ -52,8 +90,26 @@ final class InfoViewController: UIViewController {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        infoImage.snp.makeConstraints { make in
+        firstInfoLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(149)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        levelImage.snp.makeConstraints { make in
+            make.top.equalTo(firstInfoLabel.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+        }
+        secondInfoLabel.snp.makeConstraints { make in
+            make.top.equalTo(levelImage.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        heartImage.snp.makeConstraints { make in
+            make.top.equalTo(secondInfoLabel.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(24)
+        }
+        thirdInfoLabel.snp.makeConstraints { make in
+            make.top.equalTo(heartImage.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
